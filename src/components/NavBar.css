@@ -1,0 +1,23 @@
+.title{
+    
+    background-color: rgb(248, 244, 244);
+    font-size: large;    
+}
+
+.img-navbar{
+    width: 8%;
+    display: flex;
+    align-self: flex-start;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.link{
+    display: flex;
+    justify-content: space-between;
+    border:solid 3px;
+    margin: 30px;
+}
