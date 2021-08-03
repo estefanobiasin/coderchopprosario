@@ -21,3 +21,10 @@
     border:solid 3px;
     margin: 30px;
 }
+.item{
+    font-size: 30px;   
+    border: solid 1px;
+    color: blue;
+    margin: 5px;
+    text-align: center;
+}

@@ -1,12 +1,15 @@
 import React from 'react';
+import './NavBar.css';
+function ItemListContainer ({greeting}){
 
-class ItemListContainer extends React.Component{
+    return(
+                 <div className="item">
+                     {greeting}
+                
+                </div>
 
-    render (){
-        return(
-           <h1>Lista de elementos</h1>
         )
-    }
+
 
 }
-export default ItemListContainer
+ export default ItemListContainer
