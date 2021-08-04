@@ -23,8 +23,19 @@
 }
 .item{
     font-size: 30px;   
-    border: solid 1px;
     color: blue;
     margin: 5px;
     text-align: center;
+}
+
+.cont{
+  
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    flex-direction: column;
+   
+   
 }
