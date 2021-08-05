@@ -12,7 +12,7 @@ export default function App(){
     <div className="App">
     <NavBar/>   
     <ItemListContainer greeting="Este sera el listado de nuestro carrito"  />
-    <ItemCount/>
+    <ItemCount stok={4} inicio={0}/>
     </div>
     
     
