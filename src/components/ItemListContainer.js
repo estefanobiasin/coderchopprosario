@@ -1,10 +1,11 @@
 import React from 'react';
 import './NavBar.css';
-function ItemListContainer ({greeting}){
+import ItemList from './ItemList';
+function ItemListContainer (){
 
     return(
                  <div className="item">
-                     {greeting}
+                     <ItemList/>
                 
                 </div>
 
