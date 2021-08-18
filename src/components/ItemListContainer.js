@@ -1,6 +1,8 @@
+import { useParams, Link } from "react-router-dom";
 import React from 'react';
 import './NavBar.css';
 import ItemList from './ItemList';
+
 function ItemListContainer (){
 
     return(

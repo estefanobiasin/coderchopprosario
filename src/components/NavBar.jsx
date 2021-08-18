@@ -1,10 +1,9 @@
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar,Nav, NavDropdown, Container} from 'react-bootstrap';
 import logo from './img/logo.png';
 import './NavBar.css';
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar(){
     
@@ -15,7 +14,9 @@ return <div>
   <Navbar.Toggle aria-controls="responsive-navbar-nav " />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#features" >Inicio</Nav.Link>
+   
+     <Link to="/">Inicio</Link>
+    <Link to="/category/:id">Categorias</Link>
       <Nav.Link href="#features" >Choperas</Nav.Link>
       <Nav.Link href="#features" >Barriles</Nav.Link>
       <Nav.Link href="#features" >TIENDA</Nav.Link>
@@ -43,3 +44,24 @@ return <div>
 </div>
 }
 export default NavBar;
+
+
+// import { Link } from "react-router-dom";
+
+// export default function NavBar() { */}
+//   return (
+//     <nav>
+//       <ul>
+//         <li>
+//           <Link to="/">Home</Link>
+//         </li>
+//         <li>
+//           <Link to="/item-detail-container">item detail container</Link>
+//         </li>
+//         <li>
+//           <Link to="/episodes">episodes</Link>
+//         </li>
+//       </ul>
+//     </nav>
+//   );
+// }

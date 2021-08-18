@@ -1,6 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Img,Body,Title,Text,Button,Container,Row,Col} from 'react-bootstrap';
+import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 function Item({ greeting }) {
   return (
@@ -18,7 +20,10 @@ function Item({ greeting }) {
               <Card.Text>
               
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Link to={`/item-detail-container/${prod.id}`}> ver detalle 
+              {/* <Button variant="primary">Detalle y Compra</Button> */}
+              </Link>
+             
             </Card.Body>
           </Card>
           </Col>
