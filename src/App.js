@@ -20,7 +20,7 @@ export default function App(){
         <Route exact path="/category/:id">
           <ItemListContainer/>
         </Route>
-        <Route exact path="/item-detail-container">
+        <Route exact path="/item/:id">
           <ItemDetailContainer/>
         </Route>
         <Route exact path="/item-detail-container/:identificador">

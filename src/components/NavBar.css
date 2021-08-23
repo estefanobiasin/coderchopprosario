@@ -41,3 +41,13 @@
 .img-card{
     height: 400px;
 }
+.enlace{
+    color: lightcoral;
+   
+    text-decoration: none;
+    margin-inline: 5px;
+    
+}
+.enlace:hover{
+    color:black;
+}

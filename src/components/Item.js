@@ -20,7 +20,7 @@ function Item({ greeting }) {
               <Card.Text>
               
               </Card.Text>
-              <Link to={`/item-detail-container/${prod.id}`}> ver detalle 
+              <Link to={`/item-detail-container/${prod.id}`}> Detalle 
               {/* <Button variant="primary">Detalle y Compra</Button> */}
               </Link>
              
@@ -32,15 +32,6 @@ function Item({ greeting }) {
           </Container>
     </div>
         
-
-
-
-
-
-
-
-
-
   );
 }
 export default Item;

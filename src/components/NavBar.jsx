@@ -15,12 +15,13 @@ return <div>
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
    
-     <Link to="/">Inicio</Link>
-    <Link to="/category/:id">Categorias</Link>
-      <Nav.Link href="#features" >Choperas</Nav.Link>
-      <Nav.Link href="#features" >Barriles</Nav.Link>
-      <Nav.Link href="#features" >TIENDA</Nav.Link>
-      
+     <Link className="enlace" to="/">Inicio</Link>
+     
+      <Link className="enlace" to="/category/:id">Categorias</Link>
+      <Link className="enlace" to="/category/:id">Choperas</Link>
+      <Link className="enlace" to="/category/:id">Barriles</Link>
+      <Link className="enlace" to="/category/:id">TIENDA</Link>
+  
       <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
