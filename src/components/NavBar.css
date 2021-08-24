@@ -27,7 +27,6 @@
     margin: 5px;
     text-align: center;
 }
-
 .cont{
   
    
@@ -42,7 +41,7 @@
     height: 400px;
 }
 .enlace{
-    color: lightcoral;
+    color: rgba(198,60,34,255);
    
     text-decoration: none;
     margin-inline: 5px;

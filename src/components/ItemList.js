@@ -1,26 +1,12 @@
 import Item from "./Item";
 import {data} from "./products";
+import "./styleloading.css";
 const { useEffect, useState } = require("react");
 export default function ItemList() {
 const [products, setProducts] = useState([]);
 const [loading,setLoading] = useState(false);
 
 
-  // useEffect(() => {
-  //   new Promise((resolve, reject) => {
-  //     setLoading(true);
-     
-  //     setTimeout(() => resolve(data), 2000);
-  //   })
-  //     .then((dataResolve) => setProducts(dataResolve));
-  //     .finally(()=>{
-  //         setLoading(false);
-  //       })
-      
-  //     .catch((error) => {
-  //       console.log("error al resolver la promesa", error);
-  //     });
-  // }, []);
   useEffect(() => {
     new Promise((resolve, reject) => {
       setLoading(true);
@@ -33,7 +19,12 @@ const [loading,setLoading] = useState(false);
   }, []);
 
   return loading ? (
-    <h1>Loading ...</h1>
+    <>
+    <h2 className="text"><div className="loader"></div></h2>
+
+      
+    </>
+    
   ) : (
       <Item greeting={products} />
     
