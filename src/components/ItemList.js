@@ -1,6 +1,6 @@
 import Item from "./Item";
 import {data} from "./products";
-import "./styleloading.css";
+import "./style/Style.css";
 const { useEffect, useState } = require("react");
 export default function ItemList() {
 const [products, setProducts] = useState([]);

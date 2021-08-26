@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./styleloading.css";
+import "./style/Style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Img,Body,Title,Text,Button,Container,Row,Col} from 'react-bootstrap';
 import ItemDetail from "./ItemDetail";

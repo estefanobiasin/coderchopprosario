@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Img,Body,Title,Text,Button,Container,Row,Col} from 'react-bootstrap';
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function ItemDetail({ greeting }) {
-    console.log("esta es la prop", greeting);
+  const [items, setItems] = useState(0);
   return (
     <div>
         <Container>
@@ -17,6 +18,11 @@ function ItemDetail({ greeting }) {
                         <Card.Title>{greeting.title}</Card.Title>
                         <Card.Text>
                              {greeting.detail}
+                             
+                             <ItemCount stok={4} inicio={items} onAdd={setItems}/>
+                             
+
+
                         </Card.Text>
                     </Card.Body>
                     </Card>

@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar,Nav, NavDropdown, Container} from 'react-bootstrap';
 import logo from './img/logo.png';
-import './NavBar.css';
+import './style/Style.css';
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+
 
 function NavBar(){
     
