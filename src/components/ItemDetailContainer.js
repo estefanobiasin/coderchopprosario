@@ -7,7 +7,6 @@ import ItemDetail from "./ItemDetail";
 import {data} from "./products";
 
 export default function ItemDetailContainer() {
-    const { useEffect, useState } = require("react");
     const [products, setProducts] = useState([]);
     const [loading,setLoading] = useState(false);
      const { identificador } = useParams();
@@ -24,8 +23,7 @@ export default function ItemDetailContainer() {
   }, []);
 
   const filtro = products.find(function (product) {
-	return product.id === identificador;
-  
+	  return product.id === identificador;
     }); 
   
     return loading ? (

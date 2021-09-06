@@ -3,12 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Img,Body,Title,Text,Button,Container,Row,Col} from 'react-bootstrap';
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { cartContext } from "./../context/cartContext";
+
 
 function Item({ greeting }) {
-  const isDark =useContext(cartContext);
-  console.log("is dark", isDark);
+  
   return (
     <div>
 

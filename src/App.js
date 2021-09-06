@@ -1,4 +1,3 @@
-
 import NavBar from "./components/NavBar";
 import CartWidget from "./components/CartWidget";
 import ItemListContainer from "./components/ItemListContainer";
@@ -8,14 +7,14 @@ import ItemList from "./components/ItemList";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from "react";
-import { cartContext } from "./context/cartContext";
+import { CarritoProvider } from "./context/cartContext";
 
 
 
 export default function App(){
-  const [isDark, setIsDark] = useState(false);
+  
   return (
-    // <Provider value={isDark}>
+     <CarritoProvider>
     
       <BrowserRouter>
         <NavBar />
@@ -34,7 +33,7 @@ export default function App(){
           </Route>
         </Switch>
         </BrowserRouter>
-    //  </ThemeContext.Provider>
+      </CarritoProvider>
       // <div className="App">
       // <NavBar/>
       // <ItemListContainer/>

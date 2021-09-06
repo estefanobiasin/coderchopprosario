@@ -19,10 +19,8 @@ function ItemDetail({ greeting }) {
                         <Card.Text>
                              {greeting.detail}
                              
-                             <ItemCount stok={4} inicio={items} onAdd={setItems}/>
+                             <ItemCount stok={4} inicio={items} onAdd={setItems} greeting={greeting}/>
                              
-
-
                         </Card.Text>
                     </Card.Body>
                     </Card>

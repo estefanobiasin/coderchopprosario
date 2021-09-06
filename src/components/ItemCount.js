@@ -1,13 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {ButtonGroup,Button} from 'react-bootstrap';
 import "./style/Style.css";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
-
-export default function ItemCount ({stok, inicio, onAdd}){
+import carritoContext from '../context/cartContext';
+import {data} from "./products";
+export default function ItemCount ({stok, inicio, onAdd, greeting}){
     const [cont,setCont]= useState(0);
-    console.log("este es stock", {stok});
-    console.log("este es ITEM", {inicio});
+    const { products, setProducts,carrito, setCarrito,agregar } = useContext(carritoContext);
+    const producto=greeting;
+    let ok=true;
+    
+    
+    const agrega = ()=>{
+    agregar (producto,inicio);
+    }
+   
     const sumar = ()=> {
         if (inicio < stok) {
         onAdd(inicio+1)
@@ -18,6 +26,7 @@ export default function ItemCount ({stok, inicio, onAdd}){
         onAdd(inicio-1)
         }
     }
+    console.log ("este es carrito", carrito);
     return(
         <div className='cont'>
            
@@ -39,10 +48,13 @@ export default function ItemCount ({stok, inicio, onAdd}){
             <div className="mb-2" className='btnagrega'>
             {inicio > 0 && 
                                             <div className="mb-2 " className='btnagrega'>
+                                            
+                                            <button onClick={agrega}>Finalizar Compra</button>
                                                
-                                            <Link className="enlace" to="/cart">Finalizar Compra</Link>
+                                            {/* <Link className="enlace" to="/cart">Finalizar Compra</Link> */}
                                               
                                             </div>
+
                              }
                 
             </div>
@@ -50,3 +62,4 @@ export default function ItemCount ({stok, inicio, onAdd}){
     )
 
 }
+
