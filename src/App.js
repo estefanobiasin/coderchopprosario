@@ -5,6 +5,7 @@ import "./components/style/Style.css";
 import ItemCount from "./components/ItemCount";
 import ItemList from "./components/ItemList";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import Cart from "./components/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { CarritoProvider } from "./context/cartContext";
@@ -31,15 +32,13 @@ export default function App(){
           <Route exact path="/item-detail-container/:identificador">
             <ItemDetailContainer />
           </Route>
+          <Route exact path="/Cart">
+            <Cart/>
+          </Route>
         </Switch>
         </BrowserRouter>
       </CarritoProvider>
-      // <div className="App">
-      // <NavBar/>
-      // <ItemListContainer/>
-      // <ItemDetailContainer/>
-      
-      // </div>
+     
       
       
   )

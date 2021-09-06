@@ -48,10 +48,11 @@ export default function ItemCount ({stok, inicio, onAdd, greeting}){
             <div className="mb-2" className='btnagrega'>
             {inicio > 0 && 
                                             <div className="mb-2 " className='btnagrega'>
+                                            <Link to="/Cart">
+                                                <button onClick={agrega}>Finalizar Compra</button>
                                             
-                                            <button onClick={agrega}>Finalizar Compra</button>
-                                               
-                                            {/* <Link className="enlace" to="/cart">Finalizar Compra</Link> */}
+                                            </Link>   
+                                          
                                               
                                             </div>
 

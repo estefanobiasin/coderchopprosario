@@ -16,8 +16,12 @@ export const CarritoProvider = ({children})=>{
           
         for (let i=0; i<carrito.length ; i++){
             let aux= carrito[i];
-            if (aux['id']= producto.id) 
+            console.log("este es aux entero", aux);
+            if (aux['id']== producto.id) {
+                console.log("este es aux", aux['id']);
                 return true;
+                
+            }
         }
         return false;
     }    
@@ -31,7 +35,7 @@ const agregar = (producto, inicio)=>{
             alert("el producto se agrego al carrito");
         } 
         else{
-            console.log("este producto ya esta en el carrito");
+            
             alert("el producto ya se encuenctra en el carrito");
             
         }
