@@ -6,25 +6,25 @@ export const data = [
       detail: "esta es una chopera a hielo que tiene 30 mts de serpentina de aluminio, brindando una practicidad increible",
       category: "chopera hielo",
       pictureUrl:
-        "https://scontent.fros8-1.fna.fbcdn.net/v/t1.6435-9/155074010_4144859005525603_869328942599569010_n.jpg?_nc_cat=103&ccb=1-4&_nc_sid=a26aad&_nc_ohc=Y0N2F2aFdx8AX-5dBYM&_nc_ht=scontent.fros8-1.fna&oh=f1fe4a995427022ae552b841c7526f9b&oe=61364297"
+        "http://www.chopprosario.com.ar/imgmia/vertical1.jpg"
     },
     {
       id: "2",
       title: "Chopera Eléctrica ",
-      price: "1000",
+      price: "2000",
       detail: "esta chopera se conecta a la energia electrica, fabricando el ehilo sola, posee un gran estilo y elegancia",
       category: "chopera electrica",
       pictureUrl:
-      "https://scontent.fros2-2.fna.fbcdn.net/v/t1.6435-9/70725013_2747490608595790_4310904592490561536_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=U9WCiGdaleQAX_e7Dus&_nc_ht=scontent.fros2-2.fna&oh=e3524af430337cc45ed50e91b3cfda4c&oe=615C0E64"
+      "http://www.chopprosario.com.ar/imgmia/choppelec2.jpg"
     },
     {
       id: "3",
       title: "Chopera Bar",
-      price: "1000",
+      price: "3000",
       detail: "choperas para los puntos de ventas que se ajustan a las distintas necesidades",
       category: "chopera bar",
       pictureUrl:
-      "https://scontent.fros8-1.fna.fbcdn.net/v/t1.6435-9/82877912_3026626874015494_7078782608401760256_n.jpg?_nc_cat=106&ccb=1-4&_nc_sid=8bfeb9&_nc_ohc=ey_GOb2V9m4AX_LTLW3&_nc_ht=scontent.fros8-1.fna&oh=18f3892162f4b08e961c117ce3b05896&oe=613818B3"
+      "http://www.chopprosario.com.ar/imgmia/choppelec3.jpg"
     },
     {
       id: "4",

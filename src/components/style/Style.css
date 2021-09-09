@@ -40,12 +40,48 @@
 .img-card{
     height: 400px;
 }
+.img-cart{
+    height: 90px;
+    width: 80px;
+    margin: 2%;  
+}
+.tableStyle{
+    border: 1px solid;
+    margin: auto;
+    margin-top: 5%;
+}
+.td1{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.td2{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    /* border:1px solid; */
+}
+/* .th1{
+    border:1px solid;
+    width: 15%; 
+    text-align: center; 
+} */
+.th2{
+    /* border:1px solid; */
+    width: 20%;
+    text-align: center;
+    border-bottom: 1px solid rgb(22, 22, 22);
+   
+}
+
 .enlace{
     color: rgba(198,60,34,255);
    
     text-decoration: none;
     margin-inline: 5px;
     
+}
+.btnCompra{
+    height: 20%;
 }
 .enlace:hover{
     color:black;

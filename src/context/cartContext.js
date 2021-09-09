@@ -12,13 +12,14 @@ export const CarritoProvider = ({children})=>{
     const [products,setProducts]= useState([data]);
     const [carrito,setCarrito] = useState([]);
     
-    const estaEnCarrito = (producto)=>{
+    const estaEnCarrito = (producto, inicio)=>{
           
         for (let i=0; i<carrito.length ; i++){
             let aux= carrito[i];
-            console.log("este es aux entero", aux);
+           
             if (aux['id']== producto.id) {
-                console.log("este es aux", aux['id']);
+               
+                carrito[i].cantidad= carrito[i].cantidad + inicio;                
                 return true;
                 
             }
@@ -28,7 +29,7 @@ export const CarritoProvider = ({children})=>{
 
 
 const agregar = (producto, inicio)=>{   
-    if (!estaEnCarrito (producto)){   
+    if (!estaEnCarrito (producto, inicio)){   
         const carritoBorrador =[...carrito];
             carritoBorrador.push({...producto,cantidad:inicio});
             setCarrito(carritoBorrador);
@@ -36,7 +37,7 @@ const agregar = (producto, inicio)=>{
         } 
         else{
             
-            alert("el producto ya se encuenctra en el carrito");
+            alert("Se actualizo la cantidad");
             
         }
     }

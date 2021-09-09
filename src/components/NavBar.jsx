@@ -4,10 +4,13 @@ import logo from './img/logo.png';
 import './style/Style.css';
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import carritoContext from '../context/cartContext';
+import React, {useState, useEffect, useContext} from "react";
 
 
 function NavBar(){
-    
+  const { carrito, setCarrito } = useContext(carritoContext);
+  console.log("este es el tamaño del carrito", carrito.length);
 return <div>
     <Navbar collapseOnSelect expand="lg" className='title'>
   <Container>
@@ -21,16 +24,9 @@ return <div>
       <Link className="enlace" to="/category/:id">Categorias</Link>
       <Link className="enlace" to="/category/:id">Choperas</Link>
       <Link className="enlace" to="/category/:id">Barriles</Link>
-      <Link className="enlace" to="/category/:id">TIENDA</Link>
-  
-      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-      
+      <Link className="enlace" to="/Cart">Carrito </Link>
+      <Link className="enlace" to="/Cart"  ><CartWidget/> {carrito.length}</Link>   
+    
     </Nav>
     <Nav>
       <Nav.Link href="#deets">Contacto</Nav.Link>
@@ -38,7 +34,7 @@ return <div>
         Ubicacion
      
       </Nav.Link>
-      <Nav.Link href="#" ><CartWidget/></Nav.Link> 
+      
     </Nav> 
   </Navbar.Collapse> 
   </Container>
