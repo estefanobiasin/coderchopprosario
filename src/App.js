@@ -10,8 +10,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { CarritoProvider } from "./context/cartContext";
 
-
-
 export default function App(){
   
   return (

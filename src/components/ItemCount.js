@@ -5,10 +5,10 @@ import React, {useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
 import carritoContext from '../context/cartContext';
 import {data} from "./products";
-export default function ItemCount ({stok, inicio, onAdd, greeting}){
+export default function ItemCount ({stok, inicio, onAdd, prod}){
     const [cont,setCont]= useState(0);
     const { products, setProducts,carrito, setCarrito,agregar } = useContext(carritoContext);
-    const producto=greeting;
+    const producto=prod;
     let ok=true;
     
     

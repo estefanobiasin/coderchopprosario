@@ -1,5 +1,5 @@
 import Reac, {createContext, useState} from 'react';
-import {data} from "./products";
+ import {data} from "./products";
 
 
 

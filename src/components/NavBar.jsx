@@ -25,8 +25,8 @@ return <div>
       <Link className="enlace" to="/category/:id">Choperas</Link>
       <Link className="enlace" to="/category/:id">Barriles</Link>
       <Link className="enlace" to="/Cart">Carrito </Link>
-      <Link className="enlace" to="/Cart"  ><CartWidget/> {carrito.length}</Link>   
-    
+      <Link className="enlace" to="/Cart"  >{!carrito.length != 0 ?  <></> : <>{carrito.length}</> } </Link>
+      {/* {carrito.length &&  <CartWidget/> {carrito.length}</Link>}  */}
     </Nav>
     <Nav>
       <Nav.Link href="#deets">Contacto</Nav.Link>
@@ -44,22 +44,4 @@ return <div>
 export default NavBar;
 
 
-// import { Link } from "react-router-dom";
 
-// export default function NavBar() { */}
-//   return (
-//     <nav>
-//       <ul>
-//         <li>
-//           <Link to="/">Home</Link>
-//         </li>
-//         <li>
-//           <Link to="/item-detail-container">item detail container</Link>
-//         </li>
-//         <li>
-//           <Link to="/episodes">episodes</Link>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// }
