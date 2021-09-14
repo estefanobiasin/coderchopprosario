@@ -1,15 +1,11 @@
 import Reac, {createContext, useState} from 'react';
- import {data} from "./products";
-
-
-
 
 const carritoContext = createContext({});
 
 export const CarritoProvider = ({children})=>{
 
 
-    const [products,setProducts]= useState([data]);
+    const [products,setProducts]= useState();
     const [carrito,setCarrito] = useState([]);
     
     const estaEnCarrito = (producto, inicio)=>{

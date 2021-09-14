@@ -1,5 +1,3 @@
-
-
 import "./style/Style.css";
 import React, {useState, useEffect, useContext} from "react";
 import {Card,Img,Body,Title,Text,Button,Container,Row,Col,ButtonGroup,CardGroup,Table} from 'react-bootstrap';
