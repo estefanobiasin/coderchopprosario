@@ -1,17 +1,70 @@
 import "./style/Style.css";
 import React, {useState, useEffect, useContext} from "react";
-import {Card,Img,Body,Title,Text,Button,Container,Row,Col,ButtonGroup,CardGroup,Table} from 'react-bootstrap';
+import {Card,Button,Form,Control} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import carritoContext from '../context/cartContext';
 import './style/Style.css';
+import { getData } from './../firebase';
+import { FirebaseError } from "@firebase/util";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { doc, setDoc, Timestamp } from "firebase/firestore";
 
 
 
 function Cart() {
   const { carrito, setCarrito } = useContext(carritoContext);
+  const valida=false;
+  
+  const docData = {
+    Name: "ESTEFANO",
+    email: "estefanp@algo.com",
+    phone:'1234654',
+};
+  
+    
+      const handBuy= async()=>{
+      console.log("finalizar compra");
+      const db = getData();
+      
+      const orderCollection = collection (getData(), 'orders');
+      const order ={
+        buyer:docData,
+        items:carrito,
+        total:suma(),
+        
+      };
+    
+      const orderReference = await setDoc(doc(db, "orders","cliente 3"), order);
+      
+    }
+  
+  function validar(){
+   const usuario= document.getElementById('nombre').value;
+   const telefono= document.getElementById('telefono').value;
+   const correo= document.getElementById('correo').value;
+    
+    if (usuario.length==0){
+        alert ("debe ingresar un usuario");
+    }else{
+      if (telefono.length==0){
+        alert ("debe ingresar un telefono");
+      }else{
+        if (correo.length==0){
+          alert('debe ingresar un correo')
+        }else{
+          handBuy();
 
+        }
+      }
+    }
+   
+  }
+  
     const suma =()=>{
-      console.log("funcion suma");
+      
       return carrito.reduce((acc,item)=>{
         return acc+(item.cantidad*item.price)
       },0)
@@ -65,7 +118,17 @@ function Cart() {
     </tr>
   </tbody>
 </table>
-    
+<>
+    <h2 className="formulario">Ingrese sus Datos:</h2>
+  <Form.Control size="lg" type="text" className="formulario" id="nombre"  placeholder="Nombre y Apellido" />
+  <br />
+  <Form.Control size="lg" type="text" className="formulario" id="telefono" placeholder="Telefono" />
+  <br />
+  <Form.Control size="lg" type="text" className="formulario" id="correo" placeholder="Correo Electronico" />
+</>
+<Button className="btnCompra" variant="success" className="finalizar" onClick={validar} >Finalizar Compra</Button>
+  
+
 
         </div>
             

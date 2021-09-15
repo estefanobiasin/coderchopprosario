@@ -114,3 +114,14 @@
     100% { transform: rotate(360deg); }
   }
   
+.formulario{
+    margin: auto;
+    margin-top: 3%;
+    
+    width: 50%;
+}
+.finalizar{
+   float:none;
+   
+
+}

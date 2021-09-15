@@ -30,11 +30,7 @@ const ItemDetailContainer = () => {
       try {
         // const productosSnapshot = await getDocs(productosQuery);
         const productosCollection = await firebase.firestore().collection('productos').doc(identificador).get();
-        // 5 obtener datos en forma de json con data()
-        // const electricList = productosSnapshot.docs.map(doc => ({
-        //   id: doc.id,
-        //   ...doc.data()
-        // }));
+        
 
         // 6 setear el estado con la lista
         //console.log("este es el resultado de la query",{ electricList });
