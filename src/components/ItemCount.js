@@ -24,7 +24,7 @@ let ok=true;
         onAdd(inicio-1)
         }
     }
-    console.log ("este es carrito", carrito);
+    
     return(
         <div className='cont'>
            

@@ -9,7 +9,7 @@ import { FirebaseError } from "@firebase/util";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import 'firebase/firestore';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where,addDoc } from 'firebase/firestore';
 import { doc, setDoc, Timestamp } from "firebase/firestore";
 
 
@@ -17,28 +17,34 @@ import { doc, setDoc, Timestamp } from "firebase/firestore";
 function Cart() {
   const { carrito, setCarrito } = useContext(carritoContext);
   const valida=false;
+  const [compra, setCompra] = useState(false);
+  let idcompra=" ";
+  console.log("este es compra", compra);
   
-  const docData = {
-    Name: "ESTEFANO",
-    email: "estefanp@algo.com",
-    phone:'1234654',
-};
   
     
-      const handBuy= async()=>{
-      console.log("finalizar compra");
-      const db = getData();
-      
-      const orderCollection = collection (getData(), 'orders');
-      const order ={
-        buyer:docData,
-        items:carrito,
-        total:suma(),
+      const handBuy= async(docData)=>{
         
-      };
-    
-      const orderReference = await setDoc(doc(db, "orders","cliente 3"), order);
+       const db = getData();
       
+      // const orderCollection = collection (getData(), 'orders');
+       const order ={
+         buyer:docData,
+         items:carrito,
+         total:suma(),
+         date:new Date(),
+        
+       };
+    
+      // const orderReference = await setDoc(doc(db, "orders","cliente 3"), order);
+      const docRef = await addDoc(collection(db, "orders"), {
+        order  
+      });
+      console.log("Document written with ID: ", docRef.id);
+      setCompra(docRef.id);
+      //idcompra=docRef.id;
+      //compra=true;
+     
     }
   
   function validar(){
@@ -55,7 +61,15 @@ function Cart() {
         if (correo.length==0){
           alert('debe ingresar un correo')
         }else{
-          handBuy();
+          const docData = {
+            Name: usuario,
+            email:correo,
+            phone:telefono,
+        };
+        
+       
+          handBuy(docData);
+        
 
         }
       }
@@ -85,51 +99,62 @@ function Cart() {
     else{
       return (
         <div>
-    
    
-        <table className="tableStyle" >
-  <thead>
-    
-    <tr className="tr">
-      <th className="th2"></th>
-      <th className="th2">Producto</th>
-      <th className="th2">Cantidad</th>
-      <th className="th2">Precio unitario</th>
-      <th className="th2">Sub Total</th>
-    </tr>
-  </thead>
-  <tbody>
-  {carrito.map((prod) => (
-    <tr >
-      <td className="td1"><Card.Img variant="top" src={prod.pictureUrl} className='img-cart' /> 
-      <Button className="btnCompra" variant="danger" onClick={() => eliminar(prod.id)}>Eliminar</Button>
-      </td>
-      
-      <td className="td2">{prod.title}</td>
-      <td className="td2">{prod.cantidad}</td>
-      <td className="td2">${prod.price}</td>
-      
-      <td className="td2">${prod.price * prod.cantidad}</td>
-    </tr>
-    ))}
-    <tr> 
-      <th className="th2">TOTAL A PAGAR</th>
-      <th className="th2">${suma()}</th>
-    </tr>
-  </tbody>
-</table>
-<>
-    <h2 className="formulario">Ingrese sus Datos:</h2>
-  <Form.Control size="lg" type="text" className="formulario" id="nombre"  placeholder="Nombre y Apellido" />
-  <br />
-  <Form.Control size="lg" type="text" className="formulario" id="telefono" placeholder="Telefono" />
-  <br />
-  <Form.Control size="lg" type="text" className="formulario" id="correo" placeholder="Correo Electronico" />
-</>
-<Button className="btnCompra" variant="success" className="finalizar" onClick={validar} >Finalizar Compra</Button>
-  
+         
+         
+          <div className="content">
+           
+          
+            {compra ? 
+              <>
+              <h2 className="msj">Tu numero de compra es de compra es {compra} </h2> 
+              <Link to="/">Seguir Comprando !!!</Link>
+              </>
+              : 
+              
+              
+              <> 
+                 <table className="tableStyle" >
+            <thead>
+              <tr className="tr">
+                <th className="th2"></th>
+                <th className="th2">Producto</th>
+                <th className="th2">Cantidad</th>
+                <th className="th2">Precio unitario</th>
+                <th className="th2">Sub Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {carrito.map((prod) => (
+                <tr>
+                  <td className="td1"><Card.Img variant="top" src={prod.pictureUrl} className='img-cart' /> 
+                    <Button className="btnCompra" variant="danger" onClick={() => eliminar(prod.id)}>Eliminar</Button>
+                  </td>
+                  <td className="td2">{prod.title}</td>
+                  <td className="td2">{prod.cantidad}</td>
+                  <td className="td2">${prod.price}</td>
+                  <td className="td2">${prod.price * prod.cantidad}</td>
+                </tr>
+              ))}
+                <tr> 
+                  <th className="th2">TOTAL A PAGAR</th>
+                  <th className="th2">${suma()}</th>
+                </tr>
+              </tbody>
+            </table>
+                 <>
+                  <h2 className="formulario">Ingrese sus Datos:</h2>
+                    <Form.Control size="lg" type="text" className="formulario" id="nombre"  placeholder="Nombre y Apellido" />
+                    <br/>
+                    <Form.Control size="lg" type="text" className="formulario" id="telefono" placeholder="Telefono" />
+                    <br />
+                    <Form.Control size="lg" type="text" className="formulario" id="correo" placeholder="Correo Electronico" />
+                </>
+                <Button className="btnCompra" variant="success" className="finalizar" onClick={validar} >Finalizar Compra</Button> 
+              </>
+            }
 
-
+          </div>
         </div>
             
       );
