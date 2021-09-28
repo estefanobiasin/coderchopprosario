@@ -60,11 +60,7 @@
     border-bottom: 1px solid #ddd;
     /* border:1px solid; */
 }
-/* .th1{
-    border:1px solid;
-    width: 15%; 
-    text-align: center; 
-} */
+
 .th2{
     /* border:1px solid; */
     width: 20%;
@@ -72,10 +68,12 @@
     border-bottom: 1px solid rgb(22, 22, 22);
    
 }
-
+.contenedormenu{
+    border:1px solid,
+}
 .enlace{
     color: rgba(198,60,34,255);
-   
+    
     text-decoration: none;
     margin-inline: 5px;
     
@@ -132,4 +130,10 @@
 }
 .msj{
     margin-top: 2%;
+}
+.boton{
+    background-color: rgba(198,60,34,255);
+    border-color: rgba(198,60,34,255);
+    margin:3%;
+    
 }

@@ -1,16 +1,20 @@
 import Item from "./Item";
-import {data} from "./products";
+import { useParams, Link } from "react-router-dom";
 import "./style/Style.css";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { getData } from './../firebase';
 import React, { useState, useEffect } from 'react';
 
 
-const ItemList = () => {
+const Category = () => {
+    const { id } = useParams();
+    console.log("este es identificador",id);
+
   // 1 creo un estado para mostrar la lista
   const [productos, setProductos] = useState([]);
   const [loading,setLoading] = useState(false);
-
+  //const [identificador,setIdentificador]= useState();
+  
   useEffect(() => {
     // useEffect no puede asincronico
 
@@ -19,9 +23,9 @@ const ItemList = () => {
       // 3 obtener colleccion
       setLoading(true);
       const productosCollection = collection (getData(), 'productos');
-
+    const productosQuery = query(productosCollection, where('category', '==', id ));
       // 4 obtener Snapshot (foto de la lista en ese momento)
-      const productosSnapshot = await getDocs(productosCollection);
+      const productosSnapshot = await getDocs(productosQuery);
 
       // 5 obtener datos en forma de json con data()
       const productosList = productosSnapshot.docs.map(doc => ({
@@ -37,7 +41,7 @@ const ItemList = () => {
     getProductos();
 
     // array vacio, se ejecuta cuando se monta <app />
-  }, []);
+  }, [id]);
  
 
   return loading ? (
@@ -51,4 +55,9 @@ const ItemList = () => {
     </div>
 );
 }
-export default ItemList;
+export default Category;
+
+
+
+
+

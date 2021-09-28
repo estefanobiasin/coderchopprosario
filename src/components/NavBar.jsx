@@ -10,7 +10,7 @@ import React, {useState, useEffect, useContext} from "react";
 
 function NavBar(){
   const { carrito, setCarrito } = useContext(carritoContext);
-  console.log("este es el tamaño del carrito", carrito.length);
+ var id;
 return <div>
     <Navbar collapseOnSelect expand="lg" className='title'>
   <Container>
@@ -19,23 +19,21 @@ return <div>
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
    
-     <Link className="enlace" to="/">Inicio</Link>
-     
-      <Link className="enlace" to="/category/:id">Categorias</Link>
-      <Link className="enlace" to="/category/:id">Choperas</Link>
-      <Link className="enlace" to="/category/:id">Barriles</Link>
-      <Link className="enlace" to="/Cart">Carrito </Link>
-      <Link className="enlace" to="/Cart"  >{!carrito.length != 0 ?  <></> : <>{carrito.length}</> } </Link>
-      {/* {carrito.length &&  <CartWidget/> {carrito.length}</Link>}  */}
-    </Nav>
-    <Nav>
-      <Nav.Link href="#deets">Contacto</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Ubicacion
-     
-      </Nav.Link>
+     <Nav.Link><Link className="enlace" to="/">Inicio</Link></Nav.Link> 
+    <Nav.Link><Link className="enlace" to="/category/:id">Choperas</Link></Nav.Link>
+    <Nav.Link><Link className="enlace" to="/category">Barriles</Link></Nav.Link>
       
-    </Nav> 
+    <Nav.Link><Link className="enlace" to="/Cart">Carrito </Link></Nav.Link>
+    <Nav.Link><Link className="enlace" to="/Cart"  >{!carrito.length != 0 ?  <></> : <>{carrito.length}</> } </Link></Nav.Link>
+    <NavDropdown className="enlace" title="Categorias"  id="basic-nav-dropdown">
+    
+          <NavDropdown.Item  ><Link to={`/category/${id="chopera a hielo"}`} className="enlace">Chopera Hielo</Link></NavDropdown.Item>
+          <NavDropdown.Item  ><Link to={`/category/${id="chopera electrica"}`} className="enlace">Chopera Electrica</Link></NavDropdown.Item>
+          <NavDropdown.Item  ><Link to={`/category/${id="chopera bar"}`} className="enlace">Chopera Bar</Link></NavDropdown.Item>
+    </NavDropdown>
+      
+    </Nav>
+    
   </Navbar.Collapse> 
   </Container>
 </Navbar>

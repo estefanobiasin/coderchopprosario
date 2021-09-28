@@ -47,9 +47,10 @@ let ok=true;
             {inicio > 0 && 
                                             <div className="mb-2 " className='btnagrega'>
                                             
-                                            <button onClick={agrega}>Agregar al carrito</button>
+                                            <Button className="boton" onClick={agrega}>Agregar al carrito</Button>
                                             <br></br>
-                                            <Link to="/Cart">Finalizar Compra</Link>     
+                                            <Link to="/Cart"><Button variant="success">Finalizar Compra !</Button>
+                                            </Link>     
                                             </div>
 
                              }

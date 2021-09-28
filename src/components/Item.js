@@ -2,11 +2,13 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Img,Body,Title,Text,Button,Container,Row,Col} from 'react-bootstrap';
 import ItemCount from "./ItemCount";
+import "./style/Style.css";
+
 import { Link } from "react-router-dom";
 
 
 function Item({ greeting }) {
-  
+
   return (
     <div>
 
@@ -22,8 +24,8 @@ function Item({ greeting }) {
               <Card.Text>
               
               </Card.Text>
-              <Link to={`/item-detail-container/${prod.id}`}> Detalle 
-              {/* <Button variant="primary">Detalle y Compra</Button> */}
+              <Link to={`/item-detail-container/${prod.id}`}> <Button className="boton" >Detalle</Button> 
+            
               </Link>
              
             </Card.Body>

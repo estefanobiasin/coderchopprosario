@@ -19,15 +19,12 @@ function Cart() {
   const valida=false;
   const [compra, setCompra] = useState(false);
   let idcompra=" ";
-  console.log("este es compra", compra);
-  
-  
     
       const handBuy= async(docData)=>{
         
        const db = getData();
       
-      // const orderCollection = collection (getData(), 'orders');
+      
        const order ={
          buyer:docData,
          items:carrito,
@@ -36,21 +33,19 @@ function Cart() {
         
        };
     
-      // const orderReference = await setDoc(doc(db, "orders","cliente 3"), order);
       const docRef = await addDoc(collection(db, "orders"), {
         order  
       });
-      console.log("Document written with ID: ", docRef.id);
+      
       setCompra(docRef.id);
-      //idcompra=docRef.id;
-      //compra=true;
-     
+      
     }
   
   function validar(){
    const usuario= document.getElementById('nombre').value;
    const telefono= document.getElementById('telefono').value;
    const correo= document.getElementById('correo').value;
+   const correovalida= document.getElementById('correovalida').value;
     
     if (usuario.length==0){
         alert ("debe ingresar un usuario");
@@ -61,6 +56,9 @@ function Cart() {
         if (correo.length==0){
           alert('debe ingresar un correo')
         }else{
+            if(correo != correovalida){
+              alert ('los correos deben ser iguales')
+            }else{
           const docData = {
             Name: usuario,
             email:correo,
@@ -69,7 +67,7 @@ function Cart() {
         
        
           handBuy(docData);
-        
+            }
 
         }
       }
@@ -149,6 +147,8 @@ function Cart() {
                     <Form.Control size="lg" type="text" className="formulario" id="telefono" placeholder="Telefono" />
                     <br />
                     <Form.Control size="lg" type="text" className="formulario" id="correo" placeholder="Correo Electronico" />
+                    <br />
+                    <Form.Control size="lg" type="text" className="formulario" id="correovalida" placeholder="Repita correo electronico" />
                 </>
                 <Button className="btnCompra" variant="success" className="finalizar" onClick={validar} >Finalizar Compra</Button> 
               </>
