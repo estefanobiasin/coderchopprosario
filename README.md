@@ -17,3 +17,7 @@ Para iniciar la aplicacion
 ### `npm build`
 
 Para "buldiear" la app en modo produccion.
+
+## Navegacion de la app
+
+![GIF](./ecomerce.gif "NAVEGACION")
