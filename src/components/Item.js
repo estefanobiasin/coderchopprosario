@@ -1,7 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Card,Img,Body,Title,Text,Button,Container,Row,Col} from 'react-bootstrap';
-import ItemCount from "./ItemCount";
+import {Card,Button,Container,Row,Col} from 'react-bootstrap';
 import "./style/Style.css";
 
 import { Link } from "react-router-dom";

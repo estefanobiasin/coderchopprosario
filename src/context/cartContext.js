@@ -1,4 +1,4 @@
-import Reac, {createContext, useState} from 'react';
+import {createContext, useState} from 'react';
 
 const carritoContext = createContext({});
 
@@ -13,7 +13,7 @@ export const CarritoProvider = ({children})=>{
         for (let i=0; i<carrito.length ; i++){
             let aux= carrito[i];
            
-            if (aux['id']== producto.id) {
+            if (aux['id']=== producto.id) {
                
                 carrito[i].cantidad= carrito[i].cantidad + inicio;                
                 return true;
@@ -39,7 +39,7 @@ const agregar = (producto, inicio)=>{
     }
 
     return (
-        <carritoContext.Provider value={{products, setProducts, carrito, setCarrito,agregar}}>
+        <carritoContext.Provider value={{products, setProducts, carrito, setCarrito, agregar}}>
             {children}
         </carritoContext.Provider>
     );

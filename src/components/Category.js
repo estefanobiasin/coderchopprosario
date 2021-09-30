@@ -1,5 +1,5 @@
 import Item from "./Item";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./style/Style.css";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { getData } from './../firebase';
