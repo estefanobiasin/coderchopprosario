@@ -95,6 +95,10 @@
 
   }
 
+.test{
+    border: 1px solid;
+}
+
 .text{
   display: flex;
   justify-content: center;

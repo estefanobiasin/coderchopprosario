@@ -1,6 +1,7 @@
 import Item from "./Item";
+import {data} from "./products";
 import "./style/Style.css";
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { getData } from './../firebase';
 import React, { useState, useEffect } from 'react';
 
@@ -8,7 +9,7 @@ import React, { useState, useEffect } from 'react';
 const ItemList = () => {
   // 1 creo un estado para mostrar la lista
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading,setLoading] = useState(false);
 
   useEffect(() => {
     // useEffect no puede asincronico
@@ -17,7 +18,7 @@ const ItemList = () => {
     const getProductos = async () => {
       // 3 obtener colleccion
       setLoading(true);
-      const productosCollection = collection(getData(), 'productos');
+      const productosCollection = collection (getData(), 'productos');
 
       // 4 obtener Snapshot (foto de la lista en ese momento)
       const productosSnapshot = await getDocs(productosCollection);
@@ -37,17 +38,17 @@ const ItemList = () => {
 
     // array vacio, se ejecuta cuando se monta <app />
   }, []);
-
+ 
 
   return loading ? (
     <>
-      <h2 className="text"><div className="loader"></div></h2>
+      <h2 className="text"><div className="loader"></div></h2>  
     </>
-
+    
   ) : (
-    <div>
-      <Item greeting={productos} />
+     <div>
+         <Item greeting={productos} />
     </div>
-  );
+);
 }
 export default ItemList;

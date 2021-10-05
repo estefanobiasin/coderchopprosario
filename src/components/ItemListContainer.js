@@ -1,16 +1,18 @@
+import { useParams, Link } from "react-router-dom";
 import React from 'react';
 import './style/Style.css';
 import ItemList from './ItemList';
 
-function ItemListContainer() {
+function ItemListContainer (){
 
-    return (
-        <div className="item">
-            <ItemList />
+    return(
+                 <div className="item">
+                     <ItemList/>
+                
+                </div>
 
-        </div>
-    )
+        )
 
 
 }
-export default ItemListContainer
+ export default ItemListContainer

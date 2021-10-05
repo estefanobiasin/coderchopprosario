@@ -30,9 +30,10 @@ function Cart() {
     const docRef = await addDoc(collection(db, "orders"), {
       order
     });
-
+   
     setCompra(docRef.id);
-    setCarrito([])
+    
+    // setCarrito([])
   }
 
   function finalizarCompra() {    
@@ -82,9 +83,17 @@ function Cart() {
     setCarrito(aux);
 
   }
+  const vaciarCarrito =()=>{
+    console.log("este es vaciar carrito");
+     setCarrito([]);
+  }
 
-  if (carrito.length === 0) {
-    return <Link to="/">VAMOS A COMPRAR !!!</Link>
+  if (carrito.length == 0) {
+    return(
+    <div className="content">
+    <Button  variant="outline-primary"><Link to="/">VAMOS A COMPRAR !!!</Link></Button>
+    </div>
+    )
   }
   
   return (
@@ -93,7 +102,7 @@ function Cart() {
         {compra ?
           <>
             <h2 className="msj">Tu numero de compra es de compra es {compra} </h2>
-            <Link to="/">Seguir Comprando !!!</Link>
+            <Button variant="outline-primary" onClick={() => vaciarCarrito()}><Link to="/">Seguir Comprando !!!</Link></Button>
           </>
           :
           <>
